@@ -10,45 +10,44 @@ top_range_number = input('Type Number of Range :) ? ')
 
 random_number = 0
 
-list_of_number = []
+# list_of_number = []
 
 user_try_guess = 0
 
 if   str(top_range_number).isalpha() or int(top_range_number) <= 0 :
-    print('no')
+    print('you inter invaled input ')
     sys.exit()
 else:
     top_range_number = int(top_range_number)
     random_number = random.randint(0 ,top_range_number)
     
-for i in range(top_range_number+1):
-    new_arry =   list_of_number
-    new_arry.append(i)
+# for i in range(top_range_number+1):
+#     new_arry =   list_of_number
+#     new_arry.append(i)
     
+    
+
 while True:
-    answer = input('now you inter number in range ' + str(list_of_number) + ' and shouls gese right number of this number --> ')
+    answer = input('now you inter number in range 0 and ' , top_range_number , ' and shouls gese right number of this number --> ').strip()
     user_try_guess += 1
     
-    if str(answer).isalpha() :
-        print('you inter str rather than number OR ')
-        break
-    elif int(answer) < 0:
-        print('you inter less than 0')
-        continue
-        
-    if int(answer) == random_number:
-        print('you guesses right Number after ', user_try_guess , 'guess')
-        # print(answer , random_number,  user_try_guess)
-        break
-    elif int(answer) >  random_number:
-        print('you inter above random number')
-        continue
+    if answer.isdigit():
+        answer = int(answer)
+        if answer == random_number:
+            print('you win after', user_try_guess, 'try')
+            break
+        elif answer > random_number:
+            print('you inter above random number')
+        else:
+            print('you inter less random number')
+    
+    elif answer.isalpha() :
+        print(answer , 'not right you inter string ')
+        # continue
     else:
-        print('you inter less random number')
-        continue
+        print('شغل مختلف ')
+
+print('program done')   
+
     
-print('done')
-    
-    
-    
- 
+#  39:49
