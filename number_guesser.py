@@ -28,7 +28,7 @@ else:
     
 
 while True:
-    answer = input('now you inter number in range 0 and ' , top_range_number , ' and shouls gese right number of this number --> ').strip()
+    answer = input('now you inter number in range 0 and ' + str(top_range_number) + ' and shouls gese right number of this number --> ').strip()
     user_try_guess += 1
     
     if answer.isdigit():
