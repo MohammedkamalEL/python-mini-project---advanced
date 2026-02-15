@@ -48,6 +48,3 @@ while True:
         print('شغل مختلف ')
 
 print('program done')   
-
-    
-#  39:49
