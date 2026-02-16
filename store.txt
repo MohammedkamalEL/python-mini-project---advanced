@@ -1,0 +1,1 @@
+"Yesterday, a very {Adjective} astronaut found a {Noun} on Mars. Instead of collecting it, he decided to {Verb} all the way back to {Place}."
