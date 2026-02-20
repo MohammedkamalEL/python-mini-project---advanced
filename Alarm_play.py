@@ -25,14 +25,16 @@ def alarm(second = 10):
         time.sleep(1)
         second -= 1
         
+    print('play now sound')
     sound = playsound('play.wav')
+    # time.sleep(3)
     sound.stop()
         
 
 minutes = int(input('inter how many minutes the alrm play after it? '))
 
 second = minutes * 60
-alarm()
+alarm(second)
 
 # print(125 // 60)# 2
 # print(125 % 60) # 5
