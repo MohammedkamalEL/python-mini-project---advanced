@@ -25,7 +25,7 @@ def alarm(second = 10):
         time.sleep(1)
         second -= 1
         
-    print('play now sound')
+    print('\nplay now sound')
     sound = playsound('play.wav')
     # time.sleep(3)
     sound.stop()
