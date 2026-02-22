@@ -53,8 +53,8 @@ def open_file_diloge():
 if __name__ == '__main__':
     root = tk.Tk()
     root.withdraw()
-    path = open_file_diloge()
     url = input("inter URL to video ? \n")
+    path = open_file_diloge()
     if not path:
         print("please select dir... or check downloads file ")
     data =  download(url,path)    
@@ -63,4 +63,4 @@ if __name__ == '__main__':
         print(f"Title: {data.get('title')}")
         print(f"Uploader: {data.get('uploader')}")
         print(f"Duration: {data.get('duration')} seconds")
-        print(f"File saved in: downloads/")
+        print(f"File saved in: {path}/")
