@@ -51,13 +51,13 @@ def open_file_diloge():
 
 
 if __name__ == '__main__':
+    url = input("inter URL to video ? \n")
     root = tk.Tk()
     root.withdraw()
-    url = input("inter URL to video ? \n")
     path = open_file_diloge()
     if not path:
         print("please select dir... or check downloads file ")
-    data =  download(url,path)    
+    data =  download(url,path)
     if data:
         print("\nDownload complete!")
         print(f"Title: {data.get('title')}")
