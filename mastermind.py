@@ -1,25 +1,31 @@
 import random
+
 color_list = ["R", "G", "B", "Y", "O", "W"]
+
 
 def guess_brain(guess, secret):
     corect_pos = 0
     exist_incorect_pos = 0
-    guess_copy = list(guess)
-    secret_copy = list(secret)
+    color_count = {}
 
+    for color in secret:
+        if color not in color_count:
+            color_count[color] = 0
+        color_count[color] += 1
+    # print(color_count)
     for i, color in enumerate(guess):
         if secret[i] == color:
             corect_pos += 1
-            # guess_copy.pop(i)
-            # secret_copy.pop(i)
-            # print(secret_copy,guess_copy)
-        if color in secret_copy:
-            secret_copy.remove(color)
+            color_count[color] -= 1
+        if color in secret and color_count[color] > 0:
             exist_incorect_pos += 1
+            color_count[color] -= 1
+
     else:
         print(
             f"wronge full answer corect posetion= {corect_pos} - esist in secret but not in right pleass= {exist_incorect_pos}",
         )
+    # print(color_count)
 
 
 def guess_code():
@@ -38,7 +44,7 @@ def guess_code():
 
 
 def main():
-    time_try = 3
+    time_try = 5
     secret_list = random.choices(color_list, k=4)
     print(secret_list)
     while time_try > 0:
@@ -53,7 +59,7 @@ def main():
             guess_brain(guess_list, secret_list)
             time_try -= 1
     else:
-        print("you lose the code was",*secret_list)
+        print("you lose the code was", *secret_list)
 
 
 main()
